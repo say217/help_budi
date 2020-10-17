@@ -1,0 +1,10 @@
+env/
+
+db.sqlite3
+geckodriver.log
+
+### Python ###
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+chromedriver
