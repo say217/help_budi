@@ -1,3 +1,3 @@
 migrate: bash deployment.sh
-web: gunicorn superlists.wsgi --log-file -
+web: gunicorn help_budi.wsgi --log-file -
 
