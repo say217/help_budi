@@ -27,7 +27,7 @@ SECRET_KEY = 'dkgv#kux(3kfb*=hgkv&v)b&r5pe9p7^dhqsjz1pv3g6h9f9as'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [*]
 
 
 # Application definition
