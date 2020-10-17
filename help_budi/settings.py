@@ -11,7 +11,8 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
 from pathlib import Path
-
+from decouple import config
+import dj_database_url
 import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -25,7 +26,8 @@ BASE_DIR = Path(__file__).resolve(strict=True).parent.parent
 SECRET_KEY = 'dkgv#kux(3kfb*=hgkv&v)b&r5pe9p7^dhqsjz1pv3g6h9f9as'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config("DEBUG", default = "True") == "True"
+PRODUCTION = config("PRODUCTION", default = "False" ) == "True"
 
 ALLOWED_HOSTS = ["*"]
 
@@ -82,6 +84,9 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+if PRODUCTION:
+    DATABASES['default'] = dj_database_url.config()
 
 
 # Password validation
